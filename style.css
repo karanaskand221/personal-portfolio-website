@@ -339,6 +339,24 @@ a {
 }
 
 
+/* activity-section */
+
+.activity-section {
+    /* Replace with actual selector */
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    /* Or min-height: 100px if needed */
+    overflow: visible !important;
+    animation-play-state: running !important;
+    /* If animation-based */
+    transform: none !important;
+    /* Reset any pending transforms */
+    contain: none;
+    /* Disable layout containment if used */
+}
+
+
 /* Contact */
 
 .contact-content {
