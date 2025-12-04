@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
     <title>Karan Askand - Computer Engineering Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -211,6 +211,17 @@
             </div>
         </div>
     </section>
+    <!-- ⭐ ADD THIS SCRIPT RIGHT HERE ⭐ -->
+    <script>
+        window.addEventListener('load', () => {
+            const activity = document.getElementById('activity');
+            activity.style.display = 'block';
+            activity.style.visibility = 'visible';
+            activity.style.opacity = '1';
+            activity.style.height = 'auto';
+            setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
+        });
+    </script>
 
     <!-- Resume Section -->
     <section id="resume" class="section">

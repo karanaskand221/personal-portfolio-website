@@ -232,20 +232,36 @@ a {
 }
 
 
-/* Resume */
+/* Education */
 
-.hero-buttons {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
-    /* center horizontally */
-    gap: 1rem;
-    /* space between buttons */
+.education-list {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.about-content {
-    text-align: center;
-    /* center the paragraph text too (optional) */
+.education-item {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1.8rem;
+    border-left: 4px solid #2563eb;
+}
+
+.education-item h3 {
+    color: #2563eb;
+    margin-bottom: 0.4rem;
+}
+
+.education-item p {
+    color: #475569;
+    margin-bottom: 0.4rem;
+}
+
+.education-item span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2563eb;
 }
 
 
@@ -306,39 +322,6 @@ a {
 }
 
 
-/* Education */
-
-.education-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.education-item {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-    margin-bottom: 1.8rem;
-    border-left: 4px solid #2563eb;
-}
-
-.education-item h3 {
-    color: #2563eb;
-    margin-bottom: 0.4rem;
-}
-
-.education-item p {
-    color: #475569;
-    margin-bottom: 0.4rem;
-}
-
-.education-item span {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #2563eb;
-}
-
-
 /* activity-section */
 
 .activity-section {
@@ -354,6 +337,23 @@ a {
     /* Reset any pending transforms */
     contain: none;
     /* Disable layout containment if used */
+}
+
+
+/* Resume */
+
+.hero-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    gap: 1rem;
+    /* space between buttons */
+}
+
+.about-content {
+    text-align: center;
+    /* center the paragraph text too (optional) */
 }
 
 
