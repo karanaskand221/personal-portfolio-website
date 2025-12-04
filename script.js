@@ -92,12 +92,10 @@ function initNavbarEffects() {
 
 // 5. Contact Form Handler
 function initContactForm() {
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        // Remove the preventDefault block.
-        // Let the form post to FormSubmit / backend normally.
-    }
+    // You can even remove this whole function.
+    // Just leave the browser to submit the form normally.
 }
+
 
 
 // 6. Hero Typing Effect (Optional - Simple version)
