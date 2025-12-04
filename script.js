@@ -94,19 +94,11 @@ function initNavbarEffects() {
 function initContactForm() {
     const form = document.querySelector('.contact-form');
     if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(form);
-            const name = formData.get('name') || 'Anonymous';
-
-            // Demo response
-            alert(`Thank you, ${name}! Your message has been sent. (Demo mode)`);
-            form.reset();
-        });
+        // Remove the preventDefault block.
+        // Let the form post to FormSubmit / backend normally.
     }
 }
+
 
 // 6. Hero Typing Effect (Optional - Simple version)
 function initTypingEffect() {
