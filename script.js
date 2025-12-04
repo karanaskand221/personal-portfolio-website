@@ -92,9 +92,18 @@ function initNavbarEffects() {
 
 // 5. Contact Form Handler
 function initContactForm() {
-    // You can even remove this whole function.
-    // Just leave the browser to submit the form normally.
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const name = formData.get('name') || 'Friend';
+            alert(`Thank you, ${name}! Your message has been end to KARAN ASKAND. I will get back to you soon.`);
+            form.reset();
+        });
+    }
 }
+
 
 
 
