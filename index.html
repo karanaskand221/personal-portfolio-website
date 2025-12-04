@@ -213,43 +213,17 @@
                     </div>
                 </div>
     </section>
-    <!-- ⭐ ADD THIS SCRIPT RIGHT HERE ⭐ -->
     <script>
+        // Start page at top instead of remembered scroll position
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
         window.addEventListener('load', () => {
-            const activity = document.getElementById('activity');
-            if (activity) {
-                // Force visibility and layout
-                activity.style.minHeight = '400px';
-                activity.style.visibility = 'visible';
-                activity.style.opacity = '1';
-                activity.style.display = 'block';
-
-                // Fix all cards and images
-                const cards = activity.querySelectorAll('.card');
-                const images = activity.querySelectorAll('img');
-
-                cards.forEach(card => {
-                    card.style.minHeight = '350px';
-                    card.style.display = 'block';
-                });
-
-                images.forEach(img => {
-                    img.style.width = '100%';
-                    img.style.height = '200px';
-                    img.style.objectFit = 'cover';
-                    img.style.display = 'block';
-                });
-
-                // Force repaint
-                setTimeout(() => {
-                    window.dispatchEvent(new Event('resize'));
-                    activity.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }, 150);
-            }
+            window.scrollTo(0, 0);
         });
     </script>
+    <script src="script.js"></script>
+
 
 
     <!-- Resume Section -->
