@@ -321,22 +321,65 @@ a {
     margin-bottom: 0.8rem;
 }
 
+.card p {
+    color: #475569;
+    margin-bottom: 1rem;
+}
 
-/* activity-section */
+.card a {
+    color: #2563eb;
+    font-weight: 600;
+}
 
-.activity-section {
-    /* Replace with actual selector */
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-    /* Or min-height: 100px if needed */
-    overflow: visible !important;
-    animation-play-state: running !important;
-    /* If animation-based */
-    transform: none !important;
-    /* Reset any pending transforms */
-    contain: none;
-    /* Disable layout containment if used */
+
+/* === Activity section responsive fix === */
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns on desktop */
+    gap: 2rem;
+}
+
+
+/* Each activity card */
+
+#activity .card {
+    display: block;
+    min-height: 0;
+}
+
+
+/* Container for images inside activity cards */
+
+#activity .education-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-start;
+}
+
+
+/* All images in activity cards */
+
+#activity img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+/* Mobile: stack to single column */
+
+@media (max-width: 900px) {
+    .activity-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+    #activity .education-list {
+        justify-content: center;
+    }
 }
 
 

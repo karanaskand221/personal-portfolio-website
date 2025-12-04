@@ -169,13 +169,14 @@
             </div>
         </div>
     </section>
-
     <!-- Activity Section -->
     <section id="activity" class="section">
         <div class="container">
             <h2 class="section-title">Activities & Participation</h2>
-            <div class="projects-grid" style="display: block;">
+
+            <div class="projects-grid activity-grid">
                 <div class="card">
+                    <!-- first activity text + images -->
                     <h3>Campus Tech Poster Presentation – Explaining My Innovation</h3>
                     <p>Presented a concept poster on sustainable smart technology solutions during a campus exhibition, explaining the idea and design to faculty, industry guests, and fellow students. Demonstrated communication skills by walking visitors
                         through the problem statement, proposed system, and real‑world impact using the illustrated poster.
@@ -183,10 +184,11 @@
                     <img src="assets/WhatsApp Image 2025-12-04 at 09.19.44_74e669a0.jpg" alt="Karan Askand speaking at an event" class="education-list" />
                     <img src="assets/WhatsApp Image 2025-12-04 at 09.19.44_532e595d.jpg" alt="Karan Askand speaking at an event" class="education-list" />
                     <img src=" assets/WhatsApp Image 2025-12-04 at 09.19.45_6ae5858b.jpg " alt="Karan Askand speaking at an event " class="education-list" />
+
                 </div>
-            </div>
-            <div class="projects-grid " style="display: block;">
-                <div class="card " style="display: block;">
+
+                <div class="card">
+                    <!-- second activity text + images -->
                     <h3>Anchoring a District-Level Value Education Seminar</h3>
                     <p>Served as the student anchor for a district-level value education workshop organized at my institute, introducing guests and coordinating the stage program in front of a large audience. Took responsibility for smooth event flow, stage
                         communication, and formal announcements, strengthening public speaking, leadership, and event management skills.
@@ -195,33 +197,60 @@
                         <img src=" assets/Anchoring a District-Level Value Education Seminar.jpg " alt="Karan Askand speaking at an event " class=" education-list " />
                         <img src="assets/Anchoring a District-Level Value Education Seminar 2.jpg " alt="Karan Askand speaking at an event " class="education-list" />
                         <img src=" assets/Snapchat-250380759.jpg " alt="Karan Askand speaking at an event " class="education-list" />
+
+                    </div>
+
+                    <div class="card">
+                        <!-- third activity text + images -->
+                        <h3>SITRC CESA – Conducting an Interactive Session</h3>
+                        <p>Led an interactive session under the SITRC Computer Engineering Students Association (CESA), engaging juniors with insights about the club, upcoming activities, and growth opportunities. Coordinated on‑stage discussions with peers
+                            to encourage participation, improve communication between seniors and juniors, and practice public speaking and facilitation skills. </p>
+                        <div class="education-list ">
+                            <img src=" assets/Conducting an Interactive Session.jpg " alt="Karan Askand speaking at an event " class=" education-list " />
+                            <img src="assets/SITRC CESA.jpg" alt="Karan Askand speaking at an event " class="education-list" />
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="projects-grid " style="display: block;">
-                <div class="card " style="display: block;">
-                    <h3>SITRC CESA – Conducting an Interactive Session</h3>
-                    <p>Led an interactive session under the SITRC Computer Engineering Students Association (CESA), engaging juniors with insights about the club, upcoming activities, and growth opportunities. Coordinated on‑stage discussions with peers
-                        to encourage participation, improve communication between seniors and juniors, and practice public speaking and facilitation skills. </p>
-                    <div class="education-list ">
-                        <img src=" assets/Conducting an Interactive Session.jpg " alt="Karan Askand speaking at an event " class=" education-list " />
-                        <img src="assets/SITRC CESA.jpg" alt="Karan Askand speaking at an event " class="education-list" />
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- ⭐ ADD THIS SCRIPT RIGHT HERE ⭐ -->
     <script>
         window.addEventListener('load', () => {
             const activity = document.getElementById('activity');
-            activity.style.display = 'block';
-            activity.style.visibility = 'visible';
-            activity.style.opacity = '1';
-            activity.style.height = 'auto';
-            setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
+            if (activity) {
+                // Force visibility and layout
+                activity.style.minHeight = '400px';
+                activity.style.visibility = 'visible';
+                activity.style.opacity = '1';
+                activity.style.display = 'block';
+
+                // Fix all cards and images
+                const cards = activity.querySelectorAll('.card');
+                const images = activity.querySelectorAll('img');
+
+                cards.forEach(card => {
+                    card.style.minHeight = '350px';
+                    card.style.display = 'block';
+                });
+
+                images.forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = '200px';
+                    img.style.objectFit = 'cover';
+                    img.style.display = 'block';
+                });
+
+                // Force repaint
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                    activity.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 150);
+            }
         });
     </script>
+
 
     <!-- Resume Section -->
     <section id="resume" class="section">

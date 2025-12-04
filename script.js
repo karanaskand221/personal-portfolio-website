@@ -6,7 +6,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         if (targetSection) {
             targetSection.scrollIntoView({
                 behavior: 'smooth',
@@ -23,7 +23,7 @@ function createBackToTopButton() {
     btn.className = 'back-to-top';
     btn.title = 'Back to Top';
     document.body.appendChild(btn);
-    
+
     // Show/hide on scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
@@ -34,7 +34,7 @@ function createBackToTopButton() {
             btn.style.visibility = 'hidden';
         }
     });
-    
+
     // Scroll to top when clicked
     btn.addEventListener('click', () => {
         window.scrollTo({
@@ -50,7 +50,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -59,20 +59,24 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
-    // Observe all sections and cards
-    document.querySelectorAll('.section, .card, .skill-card, .education-item, .contact-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease';
-        observer.observe(el);
-    });
+
+    // Exclude #activity and its inner cards from reveal animations
+    document
+        .querySelectorAll('.section:not(#activity), .card:not(#activity .card), .skill-card, .education-item, .contact-item')
+        .forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
 }
+
+
 
 // 4. Navbar Scroll Effects
 function initNavbarEffects() {
     const navbar = document.querySelector('.navbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
@@ -92,11 +96,11 @@ function initContactForm() {
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(form);
             const name = formData.get('name') || 'Anonymous';
-            
+
             // Demo response
             alert(`Thank you, ${name}! Your message has been sent. (Demo mode)`);
             form.reset();
@@ -108,12 +112,13 @@ function initContactForm() {
 function initTypingEffect() {
     const tagline = document.querySelector('.hero-tagline');
     if (!tagline) return;
-    
+
     const text = tagline.textContent;
     tagline.textContent = '';
     tagline.style.overflow = 'hidden';
-    
+
     let i = 0;
+
     function typeWriter() {
         if (i < text.length) {
             tagline.textContent += text.charAt(i);
@@ -131,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbarEffects();
     initContactForm();
     initTypingEffect();
-    
+
     console.log('✅ Portfolio JS loaded successfully!');
 });
 
@@ -141,7 +146,7 @@ function initMobileMenu() {
     // <button class="mobile-menu-toggle">☰</button>
     const toggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (toggle && navMenu) {
         toggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
