@@ -444,6 +444,19 @@ a {
     border: none;
 }
 
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.google-form-frame {
+    width: 100%;
+    height: 100vh;
+    /* or 800–1200px if you prefer fixed height */
+    border: none;
+}
+
 
 /* Back to Top */
 
