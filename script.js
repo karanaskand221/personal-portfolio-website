@@ -1,154 +1,183 @@
-// script.js - Portfolio JavaScript (Small & Readable)
+// script.js – Karan Askand Portfolio
 
-// 1. Smooth Scrolling for Navbar Links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+// ========== 1. Smooth scrolling for internal links ==========
+function initSmoothScroll() {
+    const links = document.querySelectorAll('a[href^="#"]');
 
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    links.forEach(link => {
+        link.addEventListener("click", e => {
+            const targetId = link.getAttribute("href");
+            if (!targetId || targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
-        }
-    });
-});
 
-// 2. Back to Top Button
-function createBackToTopButton() {
-    const btn = document.createElement('button');
-    btn.innerHTML = '↑';
-    btn.className = 'back-to-top';
-    btn.title = 'Back to Top';
-    document.body.appendChild(btn);
-
-    // Show/hide on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            btn.style.opacity = '1';
-            btn.style.visibility = 'visible';
-        } else {
-            btn.style.opacity = '0';
-            btn.style.visibility = 'hidden';
-        }
-    });
-
-    // Scroll to top when clicked
-    btn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// 3. Scroll Reveal Animations
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+            // Close mobile menu after click
+            const navMenu = document.querySelector(".nav-menu");
+            const toggle = document.querySelector(".mobile-menu-toggle");
+            if (navMenu && toggle && navMenu.classList.contains("active")) {
+                navMenu.classList.remove("active");
+                toggle.classList.remove("active");
             }
         });
-    }, observerOptions);
-
-    // Exclude #activity and its inner cards from reveal animations
-    document
-        .querySelectorAll('.section:not(#activity), .card:not(#activity .card), .skill-card, .education-item, .contact-item')
-        .forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-}
-
-
-
-// 4. Navbar Scroll Effects
-function initNavbarEffects() {
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
-            navbar.style.backdropFilter = 'blur(20px)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            navbar.style.backdropFilter = 'blur(10px)';
-        }
     });
 }
 
-// 5. Contact Form Handler
-function initContactForm() {
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const name = formData.get('name') || 'Friend';
-            alert(`Thank you, ${name}! Your message has been send to KARAN ASKAND. I will get back to you soon.`);
-            form.reset();
-        });
-    }
+// ========== 2. Back‑to‑top button ==========
+function initBackToTop() {
+    const btn = document.querySelector(".back-to-top");
+    if (!btn) return;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+            btn.classList.add("show");
+        } else {
+            btn.classList.remove("show");
+        }
+    });
+
+    btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 }
 
+// ========== 3. Scroll reveal animations ==========
+function initScrollReveal() {
+    const targets = document.querySelectorAll(
+        ".section, .card, .skill-card, .timeline-item, .about-layout"
+    );
+    if (!targets.length) return;
 
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.18,
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
 
+    targets.forEach(el => {
+        el.classList.add("reveal");
+        observer.observe(el);
+    });
+}
 
-// 6. Hero Typing Effect (Optional - Simple version)
-function initTypingEffect() {
-    const tagline = document.querySelector('.hero-tagline');
-    if (!tagline) return;
+// ========== 4. Navbar effects & active link highlight ==========
+function initNavbarEffects() {
+    const navbar = document.querySelector(".navbar");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
 
-    const text = tagline.textContent;
-    tagline.textContent = '';
-    tagline.style.overflow = 'hidden';
+    if (!navbar) return;
 
-    let i = 0;
+    // Add shadow when scrolled
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+            navbar.classList.add("navbar-scrolled");
+        } else {
+            navbar.classList.remove("navbar-scrolled");
+        }
+    });
 
-    function typeWriter() {
-        if (i < text.length) {
-            tagline.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
+    // Highlight active section link
+    const sectionObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href") === `#${id}`
+                    );
+                });
+            });
+        }, {
+            threshold: 0.45
+        }
+    );
+
+    sections.forEach(section => sectionObserver.observe(section));
+}
+
+// ========== 5. Mobile navigation toggle ==========
+function initMobileMenu() {
+    const toggle = document.querySelector(".mobile-menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    if (!toggle || !navMenu) return;
+
+    toggle.addEventListener("click", () => {
+        toggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+}
+
+// ========== 6. Typewriter effect for hero subtitle ==========
+function initTypewriter() {
+    const el = document.querySelector(".typewriter");
+    if (!el) return;
+
+    const text = el.textContent.trim();
+    el.textContent = "";
+    let index = 0;
+
+    function type() {
+        if (index <= text.length) {
+            el.textContent = text.slice(0, index);
+            index += 1;
+            setTimeout(type, 45);
         }
     }
-    setTimeout(typeWriter, 500);
+
+    setTimeout(type, 600);
 }
 
-// 7. Initialize Everything
-document.addEventListener('DOMContentLoaded', () => {
-    createBackToTopButton();
-    initScrollAnimations();
-    initNavbarEffects();
-    initContactForm();
-    initTypingEffect();
+// ========== 7. Optional Google Form button ==========
+/*
+  If you want to avoid the Android iframe crash, add a button like:
+  <button class="btn btn-primary"
+          data-open-google-form="https://forms.gle/G3q4wvsaF7i9GSRE6">
+    Open Contact Form
+  </button>
+  This code will open the form in a new tab.
+*/
+function initGoogleFormButton() {
+    const btn = document.querySelector("[data-open-google-form]");
+    if (!btn) return;
 
-    console.log('✅ Portfolio JS loaded successfully!');
-});
+    btn.addEventListener("click", () => {
+        const url = btn.getAttribute("data-open-google-form");
+        if (url) window.open(url, "_blank");
+    });
+}
 
-// 8. Mobile Menu Toggle (Future-ready)
-function initMobileMenu() {
-    // Add hamburger button to HTML first:
-    // <button class="mobile-menu-toggle">☰</button>
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (toggle && navMenu) {
-        toggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+// ========== 8. Initialize everything ==========
+document.addEventListener("DOMContentLoaded", () => {
+    // Prevent browser from restoring old scroll position
+    if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
     }
-}
+    window.scrollTo(0, 0);
+
+    initSmoothScroll();
+    initBackToTop();
+    initScrollReveal();
+    initNavbarEffects();
+    initMobileMenu();
+    initTypewriter();
+    initGoogleFormButton();
+
+    console.log("✅ Portfolio JS initialized");
+});

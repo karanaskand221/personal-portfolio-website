@@ -3,17 +3,24 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-    <title>Karan Askand - Computer Engineering Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <title>Karan Askand – Computer Engineering Portfolio</title>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <header class="navbar">
         <div class="container nav-container">
             <div class="nav-brand">Karan Askand</div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">☰</button>
+
             <nav class="nav-menu">
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -27,65 +34,108 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="hero" class="hero">
         <div class="container hero-container">
             <div class="hero-text">
-                <h1 class="hero-title">Karan Kalyan Askand</h1>
-                <h2 class="hero-subtitle">B.Tech Computer Engineering Student</h2>
+                <p class="hero-badge">Computer Engineering • AI • Web • Cybersecurity</p>
+                <h1 class="hero-title">
+                    Hi, <span class="accent">I'm Karan</span> 👋
+                </h1>
+                <h2 class="hero-subtitle typewriter">
+                    B.Tech Computer Engineering Student
+                </h2>
                 <p class="hero-tagline">
-                    Passionate about AI, Web Development & Cybersecurity | Open to Internships & Collaborations
+                    Passionate about AI, modern web development and cybersecurity, actively looking for internships and collaboration opportunities.
                 </p>
                 <div class="hero-buttons">
                     <a href="assets/Karan_Askand_Resume.pdf" class="btn btn-primary" download>Download CV</a>
-                    <a href="https://www.linkedin.com/in/karanaskand" class="btn btn-outline">View LinkedIn</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                    <a href="https://www.linkedin.com/in/karanaskand" class="btn btn-ghost" target="_blank">LinkedIn</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10+ </span>
+                        <span class="stat-label">Certifications & simulations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+ </span>
+                        <span class="stat-label">Technical projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2028 </span>
+                        <span class="stat-label">Graduation year</span>
+                    </div>
                 </div>
             </div>
+
             <div class="hero-image-wrapper">
-                <img src="assets/Snapchat-250380759.jpg" alt="Karan Askand speaking at an event" class="hero-image" />
+                <div class="hero-orbit">
+                    <div class="hero-glow"></div>
+                    <img src="assets/Snapchat-250380759.jpg" alt="Karan Askand" class="hero-image" />
+                    <div class="hero-pill hero-pill-bottom">Karan Kalyan Askand</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    Aspiring computer engineer pursuing B.Tech in Computer Engineering at Sandip Institute of Technology and Research Center, Nashik, with a strong interest in AI, web development and cybersecurity.
-                </p>
-                <p>
-                    Actively seeking internships and practical opportunities in technology, research and data analysis while applying skills in programming, data analytics and dashboard development.
-                </p>
+            <div class="about-layout">
+                <div class="about-content">
+                    <p>
+                        Aspiring computer engineer at Sandip Institute of Technology & Research Center, Nashik, with a strong interest in AI, web development and cybersecurity.
+                    </p>
+                    <p>
+                        Enjoys building practical solutions, dashboards and portfolio projects while exploring modern tools like Python, JavaScript, and data analytics platforms.
+                    </p>
+                </div>
+                <div class="about-highlight">
+                    <h3>What I’m focusing on</h3>
+                    <ul>
+                        <li>Front‑end development with clean, responsive UI</li>
+                        <li>Machine learning fundamentals and real‑world datasets</li>
+                        <li>Cybersecurity basics and secure coding practices</li>
+                        <li>Communication, public speaking and leadership via campus events</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education -->
     <section id="education" class="section">
-        <div class="container ">
-            <h2 class="section-title ">Education</h2>
-            <div class="education-list ">
-                <div class="education-item ">
-                    <h3>B.Tech Computer Engineering</h3>
-                    <p>Sandip Institute of Technology & Research Center, Nashik</p>
-                    <span>Aug 2024 – Aug 2028</span>
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>B.Tech in Computer Engineering</h3>
+                        <p>Sandip Institute of Technology & Research Center, Nashik</p>
+                        <span class="timeline-tag">Aug 2024 – Aug 2028</span>
+                    </div>
                 </div>
-                <div class="education-item ">
-                    <h3>Associate of Computer Engineering</h3>
-                    <p>Savitribai Phule Pune University</p>
-                    <h3>B.Tech Computer Engineering</h3>
-                    <span>Aug 2024 – Aug 2028</span>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>Computer Engineering Foundation</h3>
+                        <p>Savitribai Phule Pune University</p>
+                        <span class="timeline-tag">Pre‑B.Tech coursework</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Skills</h2>
+
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>Programming</h3>
@@ -96,228 +146,214 @@
                         <li>SQL</li>
                     </ul>
                 </div>
+
                 <div class="skill-card">
                     <h3>Tools & Platforms</h3>
                     <ul>
-                        <li>VS Code</li>
-                        <li>Replit</li>
+                        <li>VS Code, Replit</li>
+                        <li>Git & GitHub</li>
                         <li>Windows 11</li>
-                        <li>Git</li>
+                        <li>Vercel, basic deployment flows</li>
                     </ul>
                 </div>
+
                 <div class="skill-card">
                     <h3>Domains</h3>
                     <ul>
-                        <li>AI Fundamentals</li>
-                        <li>Data Analytics</li>
-                        <li>Cybersecurity</li>
-                        <li>Web Development</li>
+                        <li>AI & ML fundamentals</li>
+                        <li>Data analytics and visualization</li>
+                        <li>Cybersecurity basics</li>
+                        <li>Responsive web development</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Projects & Experience</h2>
+
             <div class="projects-grid">
-                <div class="card">
+                <article class="card">
                     <h3>Web Development Internship – CodSoft</h3>
-                    <p>Tata's GenAI Powered Data Analytics Excited to share that I have been selected for the CodSoft Internship Program (November Batch) as a Web Development Intern!
-                        <a href="assets/Karan Kalyan Askand.pdf" class="btn btn-primary" download>Download Internship Offer Letter </a>
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Tata's GenAI Powered Data Analytics</h3>
                     <p>
-                        Completed a job simulation involving AI-powered data analytics and strategy development for the Financial Services team at Tata iQ.
-                        <a href="assets/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_THThhpTzRRdAq4J4t_1764558248614_completion_certificate.pdf" class="btn btn-primary" download>Download certificate </a>
+                        Web development intern (November batch), working on responsive layouts and portfolio‑style projects with modern front‑end practices.
                     </p>
-                </div>
-                <div class="card">
-                    <h3>Tata's Data Visualisation</h3>
+                    <a href="assets/Karan Kalyan Askand.pdf" class="btn btn-outline" download>
+            Download Internship Offer Letter
+          </a>
+                </article>
+
+                <article class="card">
+                    <h3>Tata iQ – GenAI Powered Data Analytics</h3>
                     <p>
-                        Empowering Business with Effective Insights on Forage. In the simulation I: Completed a simulation involving creating data visualizations for Tata Consultancy Services
-                        <a href="assets/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_THThhpTzRRdAq4J4t_1763736124456_completion_certificate.pdf" class="btn btn-primary" download>Download certificate</a>
+                        Completed a simulation focused on AI‑powered analytics and strategy for Financial Services, including data exploration and insight generation.
                     </p>
-                </div>
-            </div>
-            <div class="projects-grid">
-                <div class="card">
+                    <a href="assets/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_THThhpTzRRdAq4J4t_1764558248614_completion_certificate.pdf" class="btn btn-outline" download>
+            Download Certificate
+          </a>
+                </article>
+
+                <article class="card">
+                    <h3>Tata Data Visualisation</h3>
+                    <p>
+                        Built dashboards and data visualizations to communicate business insights clearly for stakeholders during a virtual job simulation.
+                    </p>
+                    <a href="assets/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_THThhpTzRRdAq4J4t_1763736124456_completion_certificate.pdf" class="btn btn-outline" download>
+            Download Certificate
+          </a>
+                </article>
+
+                <article class="card">
                     <h3>Smart India Hackathon (Internal)</h3>
                     <p>
-                        Participated as a team member in the internal Smart India Hackathon 2025, working on innovative technical solutions for real-world problems.
-                        <a href="assets/Internal Smart India Hackathon 2025_Participation Certificate_Students-03_3.pdf" class="btn btn-primary" download>Download certificate</a>
-
+                        Contributed to a team building innovative solutions for real‑world problems during internal SIH 2025 at the institute.
                     </p>
-                </div>
-                <div class="card">
+                    <a href="assets/Internal Smart India Hackathon 2025_Participation Certificate_Students-03_3.pdf" class="btn btn-outline" download>
+            Download Certificate
+          </a>
+                </article>
+
+                <article class="card">
+                    <h3>Deloitte Australia Technology Simulation</h3>
+                    <p>
+                        Practiced development, coding and dashboard proposal writing as part of a Deloitte virtual internship experience.
+                    </p>
+                    <a href="assets/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_THThhpTzRRdAq4J4t_1762792061913_completion_certificate.pdf" class="btn btn-outline" download>
+            Download Certificate
+          </a>
+                </article>
+
+                <article class="card">
                     <h3>Campus Ambassador & Volunteer</h3>
                     <p>
-                        Helped organise college induction programs and events, taking responsibility for student outreach and coordination.
-                        <a href="assets/c a certificate.jpg" class="btn btn-primary" download>Download certificate</a>
-                        <a href="assets/induction certificate.pdf" class="btn btn-primary" download>Download certificate</a>
+                        Supported induction programs and value‑education events through coordination, anchoring and student outreach activities.
                     </p>
-                </div>
-                <div class="card">
-                    <h3> Deloitte Australia's Technology </h3>
-                    <p>
-                        In the simulation I:Completed a job simulation involving development and coding Wrote a proposal for creating a dashboard
-                        <a href="assets/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_THThhpTzRRdAq4J4t_1762792061913_completion_certificate.pdf" class="btn btn-primary" download>Download certificate</a>
-                    </p>
-                </div>
+                    <div class="card-actions">
+                        <a href="assets/c a certificate.jpg" class="btn btn-outline" download>CA Certificate</a>
+                        <a href="assets/induction certificate.pdf" class="btn btn-outline" download>Induction Certificate</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
+
     <!-- Activity Section -->
     <section id="activity" class="section">
         <div class="container">
             <h2 class="section-title">Activities & Participation</h2>
 
             <div class="projects-grid activity-grid">
-                <div class="card">
-                    <!-- first activity text + images -->
+                <!-- Activity 1 -->
+                <article class="card">
                     <h3>Campus Tech Poster Presentation – Explaining My Innovation</h3>
-                    <p>Presented a concept poster on sustainable smart technology solutions during a campus exhibition, explaining the idea and design to faculty, industry guests, and fellow students. Demonstrated communication skills by walking visitors
-                        through the problem statement, proposed system, and real‑world impact using the illustrated poster.
+                    <p>
+                        Presented a concept poster on sustainable smart technology solutions during a campus exhibition, explaining the idea and design to faculty, industry guests, and fellow students. Demonstrated communication skills by walking visitors through the problem
+                        statement, proposed system, and real‑world impact.
                     </p>
-                    <img src="assets/WhatsApp Image 2025-12-04 at 09.19.44_74e669a0.jpg" alt="Karan Askand speaking at an event" class="education-list" />
-                    <img src="assets/WhatsApp Image 2025-12-04 at 09.19.44_532e595d.jpg" alt="Karan Askand speaking at an event" class="education-list" />
-                    <img src=" assets/WhatsApp Image 2025-12-04 at 09.19.45_6ae5858b.jpg " alt="Karan Askand speaking at an event " class="education-list" />
-                </div>
+                    <img src="assets/p1pre.jpg" alt="Poster presentation 1" />
+                    <img src="assets/p2pre.jpg" alt="Poster presentation 2" />
+                    <img src="assets/p3pre.jpg" alt="Poster presentation 3" />
+                </article>
 
-
-                <div class="card">
-                    <!-- second activity text + images -->
-                    <h3>Anchoring a District-Level Value Education Seminar</h3>
-                    <p>Served as the student anchor for a district-level value education workshop organized at my institute, introducing guests and coordinating the stage program in front of a large audience. Took responsibility for smooth event flow, stage
-                        communication, and formal announcements, strengthening public speaking, leadership, and event management skills.
+                <!-- Activity 2 -->
+                <article class="card">
+                    <h3>Anchoring a District‑Level Value Education Seminar</h3>
+                    <p>
+                        Served as the student anchor for a district‑level value education workshop, introducing guests and coordinating the stage program in front of a large audience. Took responsibility for smooth event flow, announcements, and on‑stage communication.
                     </p>
-                    <div class="education-list ">
-                        <img src=" assets/Anchoring a District-Level Value Education Seminar.jpg " alt="Karan Askand speaking at an event " class=" education-list " />
-                        <img src="assets/Anchoring a District-Level Value Education Seminar 2.jpg " alt="Karan Askand speaking at an event " class="education-list" />
-                        <img src=" assets/Snapchat-250380759.jpg " alt="Karan Askand speaking at an event " class="education-list" />
-                    </div>
+                    <img src="assets/Anchoring a District-Level Value Education Seminar.jpg" alt="Anchoring seminar 1" />
+                    <img src="assets/Anchoring a District-Level Value Education Seminar 2.jpg" alt="Anchoring seminar 2" />
+                    <img src="assets/Snapchat-250380759.jpg" alt="Anchoring seminar 3" />
+                </article>
+                <div class="projects-grid activity-grid" style="margin-top: 2rem;">
+                    <!-- Activity 3 -->
+                    <article class="card">
+                        <h3>SITRC CESA – Conducting an Interactive Session</h3>
+                        <p>
+                            Led an interactive session under the SITRC Computer Engineering Students Association (CESA), engaging juniors with insights about the club, upcoming activities, and growth opportunities. Practised public speaking, facilitation, and collaborative leadership.
+                        </p>
+                        <img src="assets/Conducting an Interactive Session.jpg" alt="Interactive session 1" />
+                        <img src="assets/SITRC CESA.jpg" alt="Interactive session 2" />
+                    </article>
                 </div>
             </div>
-
-            <div class="projects-grid activity-grid">
-                <div class="card">
-                    <!-- third activity text + images -->
-                    <h3>SITRC CESA – Conducting an Interactive Session</h3>
-                    <p>Led an interactive session under the SITRC Computer Engineering Students Association (CESA), engaging juniors with insights about the club, upcoming activities, and growth opportunities. Coordinated on‑stage discussions with peers
-                        to encourage participation, improve communication between seniors and juniors, and practice public speaking and facilitation skills. </p>
-                    <div class="education-list ">
-                        <img src=" assets/Conducting an Interactive Session.jpg " alt="Karan Askand speaking at an event " class=" education-list " />
-                        <img src="assets/SITRC CESA.jpg" alt="Karan Askand speaking at an event " class="education-list" />
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </section>
-    <script>
-        // Start page at top instead of remembered scroll position
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.addEventListener('load', () => {
-            window.scrollTo(0, 0);
-        });
-    </script>
-    <script src="script.js"></script>
 
 
-
-    <!-- Resume Section -->
+    <!-- Resume -->
     <section id="resume" class="section">
         <div class="container">
             <h2 class="section-title">Resume</h2>
-
             <div class="about-content">
                 <p>
                     View and download my latest resume highlighting my education, internships, projects and technical skills.
                 </p>
-
                 <div class="hero-buttons">
                     <a href="assets/Karan_Askand_Resume.pdf" class="btn btn-primary" download>
-          Download Resume (PDF)
-        </a>
+            Download Resume (PDF)
+          </a>
                     <a href="assets/Karan_Askand_Resume.pdf" class="btn btn-outline" target="_blank">
-          View Resume Online
-        </a>
+            View Resume Online
+          </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="section">
-        <div class="container ">
-            <h2 class="section-title ">Contact</h2>
-            <div class="contact-content ">
-                <div class="contact-info ">
-                    <div class="contact-item ">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
                         <h3>Location</h3>
                         <p>Aantarwali Tembhi, Ghanswangi, Jalna, Maharashtra, India</p>
                     </div>
-                    <div class="contact-item ">
+                    <div class="contact-item">
                         <h3>Phone</h3>
-                        <p><a href="tel:+919922389291 ">9922389291</a></p>
+                        <p><a href="tel:+919922389291">+91 99223 89291</a></p>
                     </div>
-                    <div class="contact-item ">
+                    <div class="contact-item">
                         <h3>Email</h3>
-                        <p><a href="mailto:karanaskand222@gmail.com ">karanaskand222@gmail.com</a></p>
+                        <p><a href="mailto:karanaskand222@gmail.com">karanaskand222@gmail.com</a></p>
                     </div>
-                    <div class="contact-item ">
+                    <div class="contact-item">
                         <h3>Social</h3>
                         <p>
-                            <a href="https://www.linkedin.com/in/karanaskand ">LinkedIn</a> |
-                            <a href="https://www.instagram.com/kk_askand ">Instagram</a>
+                            <a href="https://www.linkedin.com/in/karanaskand" target="_blank">LinkedIn</a> |
+                            <a href="https://www.instagram.com/kk_askand" target="_blank">Instagram</a>
                         </p>
-                    </div>
-
-                    <div class="contact-form">
-                        <div class="form-container">
-                            <iframe src="https://forms.gle/G3q4wvsaF7i9GSRE6" class="google-form-frame" frameborder="0" marginheight="0" marginwidth="0">
-                          Loading…
-                        </iframe>
-                        </div>
                     </div>
                 </div>
 
+                <div class="contact-form">
+                    <div class="form-container">
+                        <!-- Option 1: embedded Google Form (may crash on some Android devices) -->
+                        <iframe src="https://forms.gle/G3q4wvsaF7i9GSRE6" class="google-form-frame" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
+            </iframe>
+
+                        <!-- Option 2 (safer): button that opens Google Form in new tab -->
+                        <button class="btn btn-primary" style="width: 100%; border-radius: 0;" data-open-google-form="https://forms.gle/G3q4wvsaF7i9GSRE6">
+              Open Contact Form
+            </button>
+
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </section>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top " title="Back to top ">↑</button>
+    <button class="back-to-top" title="Back to top">↑</button>
 
-    <script src="script.js "></script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 
-</html>
 
-</html>
-
-</html>
-</div>
-</div>
-</section>
-
-<!-- Back to Top Button -->
-<button class="back-to-top " title="Back to top ">↑</button>
-
-<script src="script.js "></script>
-</body>
-
-</html>
-
-</html>
 
 </html>
