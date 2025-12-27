@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Kalyan Askand - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header-content .title {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            font-size: 1.4em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #764ba2;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .entry {
+            margin-bottom: 20px;
+        }
+        
+        .entry h3 {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .entry-subtitle {
+            font-size: 0.95em;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .entry-meta {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .entry p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+        
+        .entry p:before {
+            content: "▸ ";
+            color: #764ba2;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-left: -15px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .summary-text {
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .header-content h1 {
+                font-size: 1.8em;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+            .section h2 {
+                font-size: 1.2em;
+            }
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .print-button {
+                display: none;
+            }
+            .main-content {
+                gap: 20px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header with Photo -->
+        <div class="header">
+            <div class="profile-photo">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/91dd6d27-d137-4376-a58e-67d86d515305" alt="Karan Kalyan Askand">
+            </div>
+            <div class="header-content">
+                <h1>Karan Kalyan Askand</h1>
+                <p class="title">Full-Stack Developer | Data Science Enthusiast | AI Explorer</p>
+                <div class="contact-info">
+                    <span>📱 9922389291</span>
+                    <span>✉️ karanaskand221@gmail.com</span>
+                    <span>🔗 linkedin.com/in/karanaskand</span>
+                    <span>📍 Maharashtra, India</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div>
+                <!-- Technical Skills -->
+                <div class="section">
+                    <h2>Technical Skills</h2>
+                    <div class="skills-container">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Machine Learning</span>
+                        <span class="skill-badge">Data Analysis</span>
+                        <span class="skill-badge">Web Development</span>
+                        <span class="skill-badge">Git/GitHub</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">EDA</span>
+                        <span class="skill-badge">AI Fundamentals</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2>Education</h2>
+                    <div class="entry">
+                        <h3>B.Tech Computer Engineering</h3>
+                        <div class="entry-subtitle">Sandip Institute of Technology and Research Centre</div>
+                        <div class="entry-meta">Nashik, Maharashtra | Expected 2028</div>
+                        <p>Coursework: Programming, AI Fundamentals, Data Analytics, Web Development</p>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2>Certifications</h2>
+                    <div class="entry">
+                        <p>Data Visualization: Empowering Business with Effective Insights</p>
+                    </div>
+                    <div class="entry">
+                        <p>Cybersecurity Analyst Job Simulation</p>
+                    </div>
+                    <div class="entry">
+                        <p>Technology & Client Service Delivery Job Simulations</p>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="section">
+                    <h2>Languages</h2>
+                    <div class="entry">
+                        <p>English (Proficient)</p>
+                    </div>
+                    <div class="entry">
+                        <p>Hindi (Native)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <!-- Professional Summary -->
+                <div class="section">
+                    <h2>Professional Summary</h2>
+                    <p class="summary-text">
+                        Ambitious B.Tech Computer Engineering student with a passion for full-stack development and data science. Demonstrating strong technical proficiency in Python, C++, and JavaScript, complemented by hands-on experience through multiple internships. Actively
+                        engaged in machine learning projects and web development initiatives. Seeking opportunities to leverage technical skills and drive innovation in a dynamic tech environment.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <h2>Professional Experience</h2>
+
+                    <div class="entry">
+                        <h3>Data Science Intern</h3>
+                        <div class="entry-subtitle">CodeAlpha | Lucknow</div>
+                        <div class="entry-meta">December 2025 - Present</div>
+                        <p>Engaged in data-driven tasks and analytical problem-solving</p>
+                        <p>Analyzed datasets to derive meaningful business insights</p>
+                        <p>Implemented data science concepts through practical projects</p>
+                    </div>
+
+                    <div class="entry">
+                        <h3>Web Development Intern</h3>
+                        <div class="entry-subtitle">CodSoft | Remote</div>
+                        <div class="entry-meta">December 2025 - Present</div>
+                        <p>Building real-world web projects with modern technologies</p>
+                        <p>Gaining hands-on experience in front-end and back-end development</p>
+                        <p>Contributing to professional web development standards</p>
+                    </div>
+
+                    <div class="entry">
+                        <h3>Data Science Intern</h3>
+                        <div class="entry-subtitle">CodSoft | India</div>
+                        <div class="entry-meta">November 2025 - December 2025</div>
+                        <p>Developed ML models: Titanic Prediction, Iris Classification</p>
+                        <p>Performed data preprocessing and model optimization</p>
+                        <p>Utilized GitHub for version control and collaboration</p>
+                    </div>
+                </div>
+
+                <!-- Leadership & Awards -->
+                <div class="section">
+                    <h2>Leadership & Awards</h2>
+                    <div class="entry">
+                        <p>Arranged University Hackathon focused on innovative tech solutions</p>
+                    </div>
+                    <div class="entry">
+                        <p>Recognized as Best Campus Ambassador for student mentorship</p>
+                    </div>
+                </div>
+
+                <!-- Affiliations -->
+                <div class="section">
+                    <h2>Professional Affiliations</h2>
+                    <div class="entry">
+                        <p>Member of ACM (Association for Computing Machinery)</p>
+                    </div>
+                    <div class="entry">
+                        <p>Smart India Hackathon Volunteer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">📄 Download as PDF</button>
+
+    <script>
+        // Optional: Add smooth animations on load
+        window.addEventListener('load', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
